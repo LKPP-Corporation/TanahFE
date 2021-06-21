@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -59,17 +60,30 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Tanah:build"
+            "browserTarget": "Tanah:build",
+            "proxyConfig": "proxy.config.js"
           },
           "configurations": {
             "production": {
               "browserTarget": "Tanah:build:production"
+            },
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "Tanah:build:hmr"
             }
           }
         },
@@ -91,6 +105,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -124,5 +139,8 @@
       }
     }
   },
-  "defaultProject": "Tanah"
+  "defaultProject": "Tanah",
+  "cli": {
+    "analytics": "48be28e1-f80c-44ad-9775-1cb3180b8e1c"
+  }
 }

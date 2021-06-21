@@ -1,0 +1,21 @@
+<page-header></page-header>
+
+<div fxLayout="row wrap" class="matero-row">
+  <div fxFlex="100" class="matero-col">
+    <mat-card>
+      <mat-card-title>Form Inline</mat-card-title>
+
+      <form (ngSubmit)="save()">
+        <mat-form-field class="m-r-8">
+          <input matInput placeholder="id" [(ngModel)]="tanah.id" name="id" />
+        </mat-form-field>
+
+        <mat-form-field class="m-r-8">
+          <input matInput placeholder="Nama" [(ngModel)]="tanah.nama" name="nama" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary">Save</button>
+      </form>
+    </mat-card>
+  </div>
+</div>
